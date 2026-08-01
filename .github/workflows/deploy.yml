@@ -17,7 +17,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2223
           script: |
-            cd ${{ vars.PROJECT_PATH }}
+            cd /opt/apps/kuitansi-bos
             git pull origin main
             docker compose down
             docker compose up -d --build
