@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <mask id="receipt-mask">
+    <rect width="100" height="100" fill="white" />
+    <circle cx="78" cy="75" r="24" fill="black" />
+  </mask>
+
+  <g mask="url(#receipt-mask)">
+    <path d="M60 10 H20 C14 10 10 14 10 20 V90 L22.5 78 L35 90 L47.5 78 L60 90 L72.5 78 L85 90 V35" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M60 10 V27 C60 32 63 35 68 35 H85" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M60 10 L85 35 H68 C63 35 60 32 60 27 Z" fill="#2563eb" />
+    
+    <path d="M 25 28 H 35 C 40 28 43 30 43 34 C 43 38 40 40 35 41 L 42 51 H 36 L 31 41 H 28 V 51 H 23 V 28 Z M 28 32 V 37 H 33 C 35 37 37 36 37 34 C 37 32 35 32 33 32 H 28 Z" fill="#2563eb" />
+    <path d="M 45 36 H 50 V 38 C 51 37 53 36 56 36 C 61 36 64 39 64 44 C 64 49 61 52 56 52 C 53 52 51 51 50 50 V 58 H 45 V 36 Z M 50 43 C 50 46 52 48 55 48 C 57 48 59 46 59 43 C 59 40 57 38 55 38 C 52 38 50 40 50 43 Z" fill="#2563eb" />
+
+    <line x1="23" y1="63" x2="53" y2="63" stroke="#2563eb" stroke-width="6" stroke-linecap="round" />
+    <line x1="23" y1="75" x2="40" y2="75" stroke="#2563eb" stroke-width="6" stroke-linecap="round" />
+  </g>
+
+  <mask id="check-mask">
+    <circle cx="78" cy="75" r="20" fill="white" />
+    <path d="M68,76 L75,83 L88,65" stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </mask>
+  <circle cx="78" cy="75" r="20" fill="#2563eb" mask="url(#check-mask)" />
+</svg>

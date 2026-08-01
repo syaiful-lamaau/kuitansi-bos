@@ -1,0 +1,41 @@
+name: kuitansi-bos-prod
+
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web
+    container_name: kuitansi_web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8082:80"
+    depends_on:
+      - app
+    networks:
+      - kuitansi_net
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: kuitansi_app
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - kuitansi_storage:/var/www/html/storage
+    networks:
+      - kuitansi_net
+      - shared_net
+
+networks:
+  kuitansi_net:
+    driver: bridge
+  shared_net:
+    external: true
+
+volumes:
+  kuitansi_storage:

@@ -1,0 +1,48 @@
+name: kuitansi-bos-dev
+
+services:
+
+  ###########################################
+  # Web (Nginx)
+  ###########################################
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web
+    container_name: kuitansi_web
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    depends_on:
+      - app
+    networks:
+      - kuitansi_net
+
+  ###########################################
+  # App (Laravel PHP-FPM)
+  ###########################################
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: kuitansi_app
+    restart: unless-stopped
+    # env_file:
+    #   - .env
+    volumes:
+      - .:/var/www/html
+      - vendor_data:/var/www/html/vendor
+    networks:
+      - kuitansi_net
+      - shared_mysql
+
+networks:
+  kuitansi_net:
+    driver: bridge
+  shared_mysql:
+    external: true
+
+volumes:
+  vendor_data:
