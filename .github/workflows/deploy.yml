@@ -17,8 +17,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 2223
           script: |
-            sudo mkdir -p /opt/apps/kuitansi-bos
-            sudo chown -R $(whoami):$(whoami) /opt/apps/kuitansi-bos
+            mkdir -p /opt/apps/kuitansi-bos
             cd /opt/apps/kuitansi-bos
             if [ ! -d ".git" ]; then
               git clone git@github.com:syaiful-lamaau/kuitansi-bos.git .
